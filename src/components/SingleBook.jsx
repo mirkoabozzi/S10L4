@@ -4,6 +4,7 @@ const SingleBook = (props) => {
   return (
     <Col key={props.book.asin} sm="12" md="6" lg="4" xxl="3" className="my-3">
       <Card
+        data-testid="cards"
         className="my-3 shadow"
         onClick={() => {
           props.changeAsin(props.book.asin);

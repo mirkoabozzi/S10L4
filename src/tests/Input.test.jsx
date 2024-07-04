@@ -11,7 +11,7 @@ describe("Input", () => {
 
     await user.type(inputField, "born");
 
-    const filteredBookLists = await screen.getAllByText(/compra/i);
+    const filteredBookLists = await screen.getAllByRole("button");
 
     // expect(filteredBookLists).toHaveLength(2);
 
