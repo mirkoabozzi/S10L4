@@ -13,13 +13,14 @@ describe("Border Book", () => {
     expect(card).toHaveStyle({ border: "3px solid blue" });
   });
 
-  it("Border Book remove color", () => {
+  it("Border Book 1 remove color", () => {
     render(<App />);
     const cards = screen.getAllByTestId("cards");
 
     const firstCard = cards[0];
     const secondCard = cards[1];
 
+    fireEvent.click(firstCard);
     fireEvent.click(secondCard);
 
     expect(firstCard).not.toHaveStyle({ border: "3px solid blue" });
