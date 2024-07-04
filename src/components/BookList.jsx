@@ -17,7 +17,7 @@ const BookList = (props) => {
       <Col sm={12} md={6}>
         <Container>
           <InputGroup className="my-3">
-            <Form.Control type="text" placeholder="Cerca un libro" aria-describedby="basic-addon2" value={userBook} onChange={(e) => setUserBook(e.target.value)} />
+            <Form.Control data-testid="inputField" type="text" placeholder="Cerca un libro" aria-describedby="basic-addon2" value={userBook} onChange={(e) => setUserBook(e.target.value)} />
           </InputGroup>
           <Row>
             {props.books
