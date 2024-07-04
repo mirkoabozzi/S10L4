@@ -5,10 +5,11 @@ import { expect } from "vitest";
 describe("Border Book", () => {
   it("Border Book change color", () => {
     render(<App />);
-    const cards = screen.queryAllByTestId("cards");
+    const cards = screen.getAllByTestId("cards");
+    const card = cards[0];
 
-    fireEvent.click(cards);
+    fireEvent.click(card);
 
-    expect(cards).toHaveClass("btn-primary");
+    expect(card).toHaveStyle({ border: "3px solid blue" });
   });
 });
