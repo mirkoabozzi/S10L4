@@ -1,6 +1,6 @@
 import CommentList from "./CommentList";
 import AddComment from "./AddComment";
-import { Alert, Spinner } from "react-bootstrap";
+import { Alert, Container, Spinner } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
 const CommentArea = (props) => {
@@ -40,11 +40,11 @@ const CommentArea = (props) => {
 
   // console.log("asin",props.asin);
   return (
-    <>
+    <Container data-testid="container">
       <h2 className="mt-2">Commenti {isLoading && <Spinner animation="grow" />}</h2>
       {comments.length > 0 ? <CommentList fetchComments={fetchComments} comments={comments} /> : <Alert> Seleziona un libro per visualizzare i commenti!</Alert>}
       {props.asin.length > 0 && <AddComment asin={props.asin} fetchComments={fetchComments} />}
-    </>
+    </Container>
   );
 };
 export default CommentArea;
